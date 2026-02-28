@@ -77,6 +77,7 @@
       - NotekeeperCartridge
       - STMessengerCartridge # stalker-en-changes: replaced upstream messenger
       - STFactionRelationsCartridge # stalker-en-changes
+      - STMercBoardCartridge # stalker-en-changes
     cartridgeSlot:
       priority: -1
       name: Cartridge
