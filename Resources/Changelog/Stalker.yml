@@ -935,5 +935,12 @@
   id: 105
   time: '2026-03-01T14:52:13.401188+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/548
+- author: Roland410
+  changes:
+  - message: Replaces bandit SEVA sprites made by Wassuy.
+    type: Tweak
+  id: 106
+  time: '2026-03-01T14:54:25.660209+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/555
 Name: Stalker
 Order: -1
