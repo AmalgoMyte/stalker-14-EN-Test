@@ -1053,5 +1053,22 @@
   id: 114
   time: '2026-03-03T23:29:28.796693+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/542
+- author: Roland410
+  changes:
+  - message: Adds NanoTask cartridge to all PDAs, giving a task manager for your PDA,
+      which you can print and give to others.
+    type: Add
+  - message: Adds a pen to all PDAs.
+    type: Add
+  - message: Makes the flashlight on PDAs stronger.
+    type: Tweak
+  - message: Changes the English translation of PDA names and descriptions to ease
+      metagaming of them, the skins of them remain.
+    type: Tweak
+  - message: Adds ST and job role suffixes to PDAs for admins/GMs.
+    type: Tweak
+  id: 115
+  time: '2026-03-03T23:39:30.886857+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/565
 Name: Stalker
 Order: -1
