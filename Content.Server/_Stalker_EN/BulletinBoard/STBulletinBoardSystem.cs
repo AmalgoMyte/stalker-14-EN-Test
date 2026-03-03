@@ -34,7 +34,7 @@ public sealed class STBulletinBoardSystem : EntitySystem
     [Dependency] private readonly SharedSTFactionResolutionSystem _factionResolution = default!;
     [Dependency] private readonly STMessengerSystem _messenger = default!;
 
-    private static readonly ProtoId<STBandPrototype> MonolithBandId = "STMonolithBand";
+    private static readonly ProtoId<STBandPrototype> ClearSkyBandId = "STClearSkyBand";
 
     /// <summary>
     /// Offers grouped by board type ID, then keyed by offer ID.
@@ -611,8 +611,8 @@ public sealed class STBulletinBoardSystem : EntitySystem
         if (!TryComp<BandsComponent>(uid, out var bands))
             return null;
 
-        // Covert factions (CanChange = true) appear as Loners, except Monolith who shows their real faction
-        if (bands.CanChange && bands.BandProto != MonolithBandId)
+        // Only Clear Sky is disguised as Loners on PDA
+        if (bands.BandProto == ClearSkyBandId)
             return _factionResolution.GetBandFactionName(bands.BandName);
 
         if (bands.BandProto is not { } bandProtoId)
