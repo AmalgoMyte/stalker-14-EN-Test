@@ -1094,5 +1094,12 @@
   id: 118
   time: '2026-03-04T21:17:12.501800+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/575
+- author: teecoding
+  changes:
+  - message: Armor level modifiers now calculate correctly and no longer stack improperly
+    type: Fix
+  id: 119
+  time: '2026-03-04T21:29:19.614311+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/576
 Name: Stalker
 Order: -1
