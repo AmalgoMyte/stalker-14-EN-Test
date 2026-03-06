@@ -1220,5 +1220,18 @@
   id: 131
   time: '2026-03-06T20:32:09.628919+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/589
+- author: dallaszzz
+  changes:
+  - message: Makes distant gunshots directional
+    type: Add
+  - message: Makes distant gunshots get occluded by walls
+    type: Add
+  - message: Suppresses work with distant gunshots now
+    type: Fix
+  - message: Suppressed guns now use the distant suppressed gunshot sound
+    type: Tweak
+  id: 132
+  time: '2026-03-06T21:31:16.210684+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/593
 Name: Stalker
 Order: -1
