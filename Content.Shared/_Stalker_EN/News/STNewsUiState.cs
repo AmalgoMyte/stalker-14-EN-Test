@@ -35,6 +35,9 @@ public sealed class STNewsUiState : BoundUserInterfaceState
     /// <summary>Article IDs with comments the user hasn't seen yet.</summary>
     public readonly HashSet<int> NewCommentArticleIds;
 
+    /// <summary>Reaction summaries per article. Only includes articles with at least one reaction.</summary>
+    public readonly Dictionary<int, List<STReactionSummary>> ArticleReactions;
+
     public STNewsUiState(
         List<STNewsArticleSummary> articles,
         bool canWrite,
@@ -44,7 +47,8 @@ public sealed class STNewsUiState : BoundUserInterfaceState
         bool canDeleteOpenArticle = false,
         List<STNewsComment>? openArticleComments = null,
         HashSet<int>? deletableArticleIds = null,
-        HashSet<int>? newCommentArticleIds = null)
+        HashSet<int>? newCommentArticleIds = null,
+        Dictionary<int, List<STReactionSummary>>? articleReactions = null)
     {
         Articles = articles;
         CanWrite = canWrite;
@@ -55,5 +59,6 @@ public sealed class STNewsUiState : BoundUserInterfaceState
         OpenArticleComments = openArticleComments;
         DeletableArticleIds = deletableArticleIds ?? new HashSet<int>();
         NewCommentArticleIds = newCommentArticleIds ?? new HashSet<int>();
+        ArticleReactions = articleReactions ?? new Dictionary<int, List<STReactionSummary>>();
     }
 }

@@ -66,6 +66,22 @@ public sealed class STNewsPostCommentEvent : CartridgeMessageEvent
 }
 
 /// <summary>
+/// Client→Server: Toggle a reaction on a news article.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class STNewsToggleReactionEvent : CartridgeMessageEvent
+{
+    public readonly int ArticleId;
+    public readonly string ReactionId;
+
+    public STNewsToggleReactionEvent(int articleId, string reactionId)
+    {
+        ArticleId = articleId;
+        ReactionId = reactionId;
+    }
+}
+
+/// <summary>
 /// Client signals it has navigated back from article detail to the list view.
 /// Used to clear ViewingArticleId so broadcast updates stop including article detail.
 /// </summary>

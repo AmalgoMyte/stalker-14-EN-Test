@@ -78,6 +78,9 @@ public sealed class STNewsArticleSummary
     /// <summary>Number of comments on this article.</summary>
     public readonly int CommentCount;
 
+    /// <summary>Whether this article has enough reactions to be considered trending.</summary>
+    public readonly bool IsTrending;
+
     public STNewsArticleSummary(
         int id,
         string title,
@@ -86,7 +89,8 @@ public sealed class STNewsArticleSummary
         int roundId,
         TimeSpan publishTime,
         int embedColor,
-        int commentCount = 0)
+        int commentCount = 0,
+        bool isTrending = false)
     {
         Id = id;
         Title = title;
@@ -96,6 +100,7 @@ public sealed class STNewsArticleSummary
         PublishTime = publishTime;
         EmbedColor = embedColor;
         CommentCount = commentCount;
+        IsTrending = isTrending;
     }
 }
 

@@ -34,4 +34,22 @@ public sealed partial class STCCVars
     /// </summary>
     public static readonly CVarDef<int> NewsMaxCommentsPerArticle =
         CVarDef.Create("stalkeren.news.max_comments_per_article", 200, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Per-cartridge cooldown in milliseconds between reaction toggles. Default 500.
+    /// </summary>
+    public static readonly CVarDef<int> NewsReactionCooldownMs =
+        CVarDef.Create("stalkeren.news.reaction_cooldown_ms", 500, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Minimum total reactions on an article for it to be considered trending. Default 3.
+    /// </summary>
+    public static readonly CVarDef<int> NewsTrendingThreshold =
+        CVarDef.Create("stalkeren.news.trending_threshold", 3, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     Maximum number of distinct reaction types allowed per article. Default 10.
+    /// </summary>
+    public static readonly CVarDef<int> NewsMaxDistinctReactions =
+        CVarDef.Create("stalkeren.news.max_distinct_reactions", 10, CVar.SERVERONLY);
 }

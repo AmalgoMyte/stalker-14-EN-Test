@@ -31,4 +31,8 @@ public sealed partial class STNewsCartridgeComponent : Component
     /// <summary>Last-seen comment count per article ID, for "new comments" badge.</summary>
     [ViewVariables]
     public Dictionary<int, int> LastSeenCommentCounts = new();
+
+    /// <summary>Server-side cooldown for reaction toggling.</summary>
+    [ViewVariables]
+    public TimeSpan NextReactionTime;
 }
