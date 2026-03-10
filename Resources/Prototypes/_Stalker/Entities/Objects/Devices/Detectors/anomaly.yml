@@ -43,12 +43,20 @@
     - type: STWeight
       self: 0.5
     - type: Sprite
-      sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/ad_1.rsi
+      sprite: _Stalker_EN/Objects/Devices/ZoneAnomalyDetectors/ad_1.rsi
       layers:
         - state: base
         - state: screen_off
           map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
           shader: unshaded
+    - type: GenericVisualizer  # stalker-changes-en
+      visuals:
+        enum.STZoneAnomalyDetectorProximityVisuals.Level:
+          enum.ZoneAnomalyDetectorVisuals.Layer:
+            0: { state: screen_off }
+            1: { state: screen_prox_1 }
+            2: { state: screen_prox_2 }
+            3: { state: screen_prox_4 }
     - type: ZoneAnomalyDetector
       maxBeepInterval: 2.5
       minBeepInterval: 0.5
@@ -68,12 +76,20 @@
     - type: STWeight
       self: 0.8
     - type: Sprite
-      sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/ad_1.rsi
+      sprite: _Stalker_EN/Objects/Devices/ZoneAnomalyDetectors/ad_1.rsi
       layers:
         - state: base
         - state: screen_off
           map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
           shader: unshaded
+    - type: GenericVisualizer  # stalker-changes-en
+      visuals:
+        enum.STZoneAnomalyDetectorProximityVisuals.Level:
+          enum.ZoneAnomalyDetectorVisuals.Layer:
+            0: { state: screen_off }
+            1: { state: screen_prox_1 }
+            2: { state: screen_prox_2 }
+            3: { state: screen_prox_4 }
     - type: ZoneAnomalyDetector
       maxBeepInterval: 2.5
       minBeepInterval: 0.5
@@ -90,12 +106,20 @@
     - type: STWeight
       self: 1
     - type: Sprite
-      sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/ad_2.rsi
+      sprite: _Stalker_EN/Objects/Devices/ZoneAnomalyDetectors/ad_2.rsi
       layers:
         - state: base
         - state: screen_off
           map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
           shader: unshaded
+    - type: GenericVisualizer  # stalker-changes-en
+      visuals:
+        enum.STZoneAnomalyDetectorProximityVisuals.Level:
+          enum.ZoneAnomalyDetectorVisuals.Layer:
+            0: { state: screen_off }
+            1: { state: screen_prox_1 }
+            2: { state: screen_prox_2 }
+            3: { state: screen_prox_4 }
     - type: ZoneAnomalyDetector
       level: 1
       maxBeepInterval: 2.5
@@ -115,12 +139,20 @@
     - type: STWeight
       self: 1.2
     - type: Sprite
-      sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/ad_2.rsi
+      sprite: _Stalker_EN/Objects/Devices/ZoneAnomalyDetectors/ad_2.rsi
       layers:
         - state: base
         - state: screen_off
           map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
           shader: unshaded
+    - type: GenericVisualizer  # stalker-changes-en
+      visuals:
+        enum.STZoneAnomalyDetectorProximityVisuals.Level:
+          enum.ZoneAnomalyDetectorVisuals.Layer:
+            0: { state: screen_off }
+            1: { state: screen_prox_1 }
+            2: { state: screen_prox_2 }
+            3: { state: screen_prox_4 }
     - type: ZoneAnomalyDetector
       level: 1
       distance: 5
@@ -137,12 +169,22 @@
     - type: STWeight
       self: 0.8
     - type: Sprite
-      sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/ad_3.rsi
+      sprite: _Stalker_EN/Objects/Devices/ZoneAnomalyDetectors/ad_3.rsi
       layers:
         - state: base
         - state: screen_off
           map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
           shader: unshaded
+    - type: GenericVisualizer  # stalker-changes-en
+      visuals:
+        enum.STZoneAnomalyDetectorProximityVisuals.Level:
+          enum.ZoneAnomalyDetectorVisuals.Layer:
+            0: { state: screen_off }
+            1: { state: screen_prox_1 }
+            2: { state: screen_prox_1 }
+            3: { state: screen_prox_2 }
+            4: { state: screen_prox_3 }
+            5: { state: screen_prox_4 }
     - type: ZoneAnomalyDetector
       level: 2
       beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg
@@ -243,12 +285,22 @@
     - type: STWeight
       self: 2.8
     - type: Sprite
-      sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/ad_2m.rsi
+      sprite: _Stalker_EN/Objects/Devices/ZoneAnomalyDetectors/ad_2m.rsi
       layers:
         - state: base
         - state: screen_off
           map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
           shader: unshaded
+    - type: GenericVisualizer  # stalker-changes-en
+      visuals:
+        enum.STZoneAnomalyDetectorProximityVisuals.Level:
+          enum.ZoneAnomalyDetectorVisuals.Layer:
+            0: { state: screen_off }
+            1: { state: screen_prox_1 }
+            2: { state: screen_prox_1 }
+            3: { state: screen_prox_2 }
+            4: { state: screen_prox_3 }
+            5: { state: screen_prox_4 }
     - type: ZoneAnomalyDetector
       level: 4
       beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg
