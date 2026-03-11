@@ -1357,5 +1357,13 @@
   id: 146
   time: '2026-03-11T17:52:44.153238+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/616
+- author: teecoding
+  changes:
+  - message: Pressing the quick bolt key while holding a bolt now puts it back in
+      your inventory. Bolt bags get priority so your precious bolts stay organized.
+    type: Add
+  id: 147
+  time: '2026-03-11T18:12:39.856760+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/618
 Name: Stalker
 Order: -1
