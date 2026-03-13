@@ -1458,5 +1458,15 @@
   id: 153
   time: '2026-03-13T20:42:28.857553+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/619
+- author: teecoding
+  changes:
+  - message: New admin command `strank_transfer` to move rank hours from an old character
+      to a new one, for when stalkers get a fresh identity
+    type: Add
+  - message: Rank icon no longer rudely talks over your speech bubbles
+    type: Fix
+  id: 154
+  time: '2026-03-13T20:52:37.091052+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/625
 Name: Stalker
 Order: -1
