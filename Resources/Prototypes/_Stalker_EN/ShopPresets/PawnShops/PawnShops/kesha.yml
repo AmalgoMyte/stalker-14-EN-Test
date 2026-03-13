@@ -77,12 +77,12 @@
     MutantPartSnorkFoot: 350
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 525
-    MutantPartOraculeEye: 1120
+    MutantPartBloodsuckerTentacles: 725
+    MutantPartOraculeEye: 920
     MutantPartPseudogiantHeart: 2800
     MutantPartZombieHand: 420
-    MutantPartChimeraTooth: 750
-    ClothingMaskChimera: 3000
+    MutantPartChimeraTooth: 5570
+    ClothingMaskChimera: 8000
     MutantPartIzlomArm: 665
 
      #Weapons and armour ---- min cost / 2

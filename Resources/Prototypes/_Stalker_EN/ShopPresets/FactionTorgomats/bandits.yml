@@ -85,11 +85,11 @@
     MutantPartFrogLeg: 150
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 500
-    MutantPartOraculeEye: 400
-    MutantPartPseudogiantHeart: 3400
-    MutantPartZombieHand: 450
-    MutantPartIzlomArm: 545
+    MutantPartBloodsuckerTentacles: 800
+    MutantPartOraculeEye: 1000
+    MutantPartPseudogiantHeart: 6400
+    MutantPartZombieHand: 650
+    MutantPartIzlomArm: 945
     MutantPartBurerBrain: 1500
     MutantPartControllerBrain: 2500
 

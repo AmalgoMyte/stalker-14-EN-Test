@@ -85,12 +85,12 @@
     MutantPartSnorkFoot: 315
     MutantPartFrogLeg: 90
 
-    #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 470
-    MutantPartOraculeEye: 1000
-    MutantPartPseudogiantHeart: 2500
-    MutantPartZombieHand: 380
-    MutantPartIzlomArm: 525
+    #T3 -------- Health * 3 Modified by Oracle
+    MutantPartBloodsuckerTentacles: 1770
+    MutantPartOraculeEye: 1200
+    MutantPartPseudogiantHeart: 3500
+    MutantPartZombieHand: 480
+    MutantPartIzlomArm: 625
     MutantPartBurerBrain: 1000
     MutantPartControllerBrain: 2000
 
