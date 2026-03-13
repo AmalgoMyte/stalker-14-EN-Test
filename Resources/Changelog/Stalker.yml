@@ -1405,5 +1405,21 @@
   id: 150
   time: '2026-03-12T18:59:56.305099+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/621
+- author: dallaszzz
+  changes:
+  - message: New 367 Magnum caliber
+    type: Add
+  - message: 45ACP is now just a slightly stronger pistol round
+    type: Tweak
+  - message: SW PC 325 TR is now the SW R8 and is chambered in 357 magnum along with
+      the RugerRedhawk
+    type: Tweak
+  - message: Pistol rounds now have a much lower chance to not hit
+    type: Tweak
+  - message: Freedom now has the tommy gun in their trader
+    type: Add
+  id: 151
+  time: '2026-03-13T18:38:29.992112+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/623
 Name: Stalker
 Order: -1
