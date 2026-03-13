@@ -1434,5 +1434,29 @@
   id: 152
   time: '2026-03-13T18:43:00.291788+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/624
+- author: RebelledCombine
+  changes:
+  - message: I tweaked the T3 mutant prices on every vendor. Most of them have been
+      doubled. This will now give more reasons to go into the northern area of the
+      map.
+    type: Tweak
+  - message: Now I've actually REALLY changed every vendor's tier three mutant part
+      prices, sorry for that. They've all had an increase. Some are according to Barman,
+      others have lower than barman, neutrals have equal to sido, and so on... The
+      balance of things has been kept, the prices have just overall increased.
+    type: Tweak
+  - message: I've resprited the AK-12 entirely from scratch, I've created an item
+      for it on our EN fork, there are some placeholder skins.
+    type: Tweak
+  - message: I've re-sprited two of the duty helmets that were overrid in the last
+      update.
+    type: Tweak
+  - message: I've added the ak545 Pledge to the duty vendor.
+    type: Add
+  - message: I've also included the new AK-12 "Spear" variant in it.
+    type: Add
+  id: 153
+  time: '2026-03-13T20:42:28.857553+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/619
 Name: Stalker
 Order: -1
