@@ -6,6 +6,7 @@ using Content.Server.PDA;
 using Content.Server.PDA.Ringer;
 using Content.Shared._Stalker.Bands;
 using Content.Shared._Stalker_EN.CCVar;
+using Content.Shared._Stalker_EN.CharacterRank;
 using Content.Shared._Stalker_EN.FactionRelations;
 using Content.Shared._Stalker_EN.BulletinBoard;
 using Content.Shared._Stalker_EN.News;
@@ -335,9 +336,12 @@ public sealed partial class STMessengerSystem : EntitySystem
         _nextMessageId.TryAdd(storageKey, 0);
         var msgId = ++_nextMessageId[storageKey];
 
-        // Resolve faction for non-anonymous messages; null hides faction on anonymous messages
+        // Resolve faction and rank for non-anonymous messages; null hides them on anonymous messages
         string? senderFaction = !send.IsAnonymous
             ? ResolveContactFaction(senderKey)
+            : null;
+        string? senderRankIcon = !send.IsAnonymous
+            ? ResolveContactRankIcon(senderKey)
             : null;
 
         var message = new STMessengerMessage(
@@ -347,7 +351,8 @@ public sealed partial class STMessengerSystem : EntitySystem
             _timing.CurTime,
             send.ReplyToId,
             replySnippet,
-            senderFaction);
+            senderFaction,
+            senderRankIcon);
 
         chatMessages.Add(message);
 
@@ -725,10 +730,13 @@ public sealed partial class STMessengerSystem : EntitySystem
                     contactEntry.UserId, contactEntry.CharacterName, currentFaction);
             }
 
+            var rankIcon = ResolveContactRankIcon(contactKey);
+
             contactInfos.Add(new STMessengerContactInfo(
                 contactEntry.CharacterName,
                 contactMessengerId,
-                contactEntry.FactionName));
+                contactEntry.FactionName,
+                rankIcon));
         }
 
         return new STMessengerUiState(
@@ -941,6 +949,25 @@ public sealed partial class STMessengerSystem : EntitySystem
     #endregion
 
     #region Helpers
+
+    /// <summary>
+    /// Resolves the current rank icon of an online contact by looking up their PDA holder's STCharacterRankComponent.
+    /// Returns null if the contact is offline, PDA is not equipped, or has no rank.
+    /// </summary>
+    private string? ResolveContactRankIcon((Guid UserId, string CharName) contactKey)
+    {
+        if (!_characterToPda.TryGetValue(contactKey, out var pdaUid))
+            return null;
+
+        if (!TryComp<TransformComponent>(pdaUid, out var xform))
+            return null;
+
+        var holder = xform.ParentUid;
+        if (!TryComp<STCharacterRankComponent>(holder, out var rank))
+            return null;
+
+        return rank.RankIconId;
+    }
 
     /// <summary>
     /// Resolves the current faction of an online contact by looking up their PDA holder's BandsComponent.
