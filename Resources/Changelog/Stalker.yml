@@ -1421,5 +1421,18 @@
   id: 151
   time: '2026-03-13T18:38:29.992112+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/623
+- author: teecoding
+  changes:
+  - message: Character ranks based on how much of your life you've poured into a single
+      character. Wear your no-life badge with pride
+    type: Add
+  - message: Rank icons now show up in messenger and bulletin board so everyone knows
+      you touch grass less than them
+    type: Add
+  - message: Status icons no longer do a little dance at certain zoom levels
+    type: Fix
+  id: 152
+  time: '2026-03-13T18:43:00.291788+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/624
 Name: Stalker
 Order: -1
