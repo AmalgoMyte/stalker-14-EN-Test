@@ -1,0 +1,39 @@
+- type: entity
+  parent: BaseItem
+  id: STCamera
+  name: camera
+  suffix: ST
+  description: A battered Zenit camera. Still takes decent pictures in the Zone.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Devices/camera.rsi
+    state: icon
+  - type: Item
+    size: Small
+    storedRotation: 90
+  - type: STCamera
+  - type: STWeight
+    self: 0.5
+
+- type: entity
+  parent: BaseItem
+  id: STPhoto
+  name: photograph
+  suffix: ST
+  description: A printed photograph.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/photo.rsi
+    state: photo
+  - type: Item
+    size: Tiny
+  - type: STPhoto
+  - type: STWeight
+    self: 0.1
+  - type: ActivatableUI
+    key: enum.STPhotoUiKey.Key
+    inHandsOnly: false
+  - type: UserInterface
+    interfaces:
+      enum.STPhotoUiKey.Key:
+        type: STPhotoBoundUserInterface
