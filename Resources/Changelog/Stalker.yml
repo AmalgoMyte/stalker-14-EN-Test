@@ -1510,5 +1510,12 @@
   id: 158
   time: '2026-03-14T17:53:46.972095+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/633
+- author: teecoding
+  changes:
+  - message: Reconnecting after your body was deleted no longer traps you as a ghost
+    type: Fix
+  id: 159
+  time: '2026-03-14T18:02:27.926732+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/634
 Name: Stalker
 Order: -1
