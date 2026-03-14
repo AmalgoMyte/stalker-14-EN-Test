@@ -33,7 +33,7 @@ public sealed class STPhotoSystem : EntitySystem
 
     private void OnBeforeUI(EntityUid uid, STPhotoComponent comp, BeforeActivatableUIOpenEvent args)
     {
-        var state = new STPhotoBoundUiState(comp.PhotoId, comp.PhotographerName, comp.TimeTaken);
+        var state = new STPhotoBoundUiState(comp.PhotoId);
         _ui.SetUiState(uid, STPhotoUiKey.Key, state);
     }
 

@@ -40,7 +40,6 @@ public sealed class STPhotoBoundUserInterface : BoundUserInterface
             return;
 
         _photoId = photoState.PhotoId;
-        _window?.SetMetadata(photoState.PhotoId, photoState.PhotographerName, photoState.TimeTaken);
 
         if (_photoSystem != null && _photoSystem.TryGetCachedTexture(photoState.PhotoId, out var texture))
         {

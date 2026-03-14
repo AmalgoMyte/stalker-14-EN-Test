@@ -19,13 +19,9 @@ public enum STPhotoUiKey : byte
 public sealed class STPhotoBoundUiState : BoundUserInterfaceState
 {
     public readonly Guid PhotoId;
-    public readonly string PhotographerName;
-    public readonly TimeSpan TimeTaken;
 
-    public STPhotoBoundUiState(Guid photoId, string photographerName, TimeSpan timeTaken)
+    public STPhotoBoundUiState(Guid photoId)
     {
         PhotoId = photoId;
-        PhotographerName = photographerName;
-        TimeTaken = timeTaken;
     }
 }

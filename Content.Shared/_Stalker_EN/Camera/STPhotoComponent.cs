@@ -22,16 +22,4 @@ public sealed partial class STPhotoComponent : Component
     /// </summary>
     [DataField]
     public byte[] ImageData = Array.Empty<byte>();
-
-    /// <summary>
-    /// Name of the player who took the photo.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public string PhotographerName = string.Empty;
-
-    /// <summary>
-    /// In-game time when the photo was taken.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public TimeSpan TimeTaken;
 }
