@@ -463,7 +463,6 @@
     items:
       # ARMOR
       STClothingOuterArmorLightPlateVestBasePSZ7rene: 22
-      STLeadPlate: 5
       ClothingNeckToothNecklace: 1 #10 because they come with 9
   # - name: shop-category-storage-and-containers
   #   priority: 7
