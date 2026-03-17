@@ -47,5 +47,5 @@
       - type: Vocal
         sounds:
           Male: MaleHumanLoner
-          Female: FemaleHuman
-          Unsexed: MaleHuman
+          Female: FemaleHumanLoner
+          Unsexed: MaleHumanLoner

@@ -56,7 +56,12 @@
       - type: ActiveRadio
         channels:
         - Monolith
-        GlobalReceive: true # Stalker EN change end
+        GlobalReceive: true
+      - type: Vocal
+        sounds:
+          Male: MaleHumanMonolith
+          Female: FemaleHumanMonolith
+          Unsexed: MaleHumanMonolith # stalker EN change end
 
 - type: job
   id: StalkerHeadMonolith
@@ -116,7 +121,12 @@
     - type: ActiveRadio
       channels:
       - Monolith
-      GlobalReceive: true # Stalker EN change end
+      GlobalReceive: true
+    - type: Vocal
+      sounds:
+        Male: MaleHumanMonolith
+        Female: FemaleHumanMonolith
+        Unsexed: MaleHumanMonolith # Stalker EN change end
 
 - type: startingGear
   id: MonolithGear
