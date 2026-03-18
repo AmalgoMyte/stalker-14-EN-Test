@@ -3,6 +3,7 @@ using Content.Shared.Random.Rules;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Teleportation.Systems;
 using NetCord;
+using Robust.Shared.GameStates;
 using Robust.Shared.Physics.Events;
 
 namespace Content.Server._Stalker_EN.Teleportation;
@@ -19,6 +20,7 @@ public sealed class LinkByStringSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<LinkByStringComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<LinkByStringComponent, ComponentHandleState>(OnHandleState);
     }
 
     private void OnStartup(Entity<LinkByStringComponent> ent, ref ComponentStartup args)
@@ -32,6 +34,11 @@ public sealed class LinkByStringSystem : EntitySystem
         TryLink(ent);
     }
 
+    private void OnHandleState(Entity<LinkByStringComponent> ent, ref ComponentHandleState args)
+    {
+        TryLink(ent);
+    }
+
     private void TryLink(Entity<LinkByStringComponent> ent)
     {
         var query = EntityQueryEnumerator<LinkByStringComponent>();
@@ -41,7 +48,6 @@ public sealed class LinkByStringSystem : EntitySystem
             if (ent.Comp.LinkString != link.LinkString || ent.Owner == uid)
                 continue;
             _link.TryLink(ent.Owner, uid);
-            RemCompDeferred<LinkByStringComponent>(ent);
         }
     }
 }

@@ -47,7 +47,7 @@ public abstract class SharedPortalSystem : EntitySystem
         SubscribeLocalEvent<PortalComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
 
         SubscribeLocalEvent<PortalComponent, StartCollideEvent>(OnCollide);
-        SubscribeLocalEvent<PortalComponent, EndCollideEvent>(OnEndCollide);
+        // SubscribeLocalEvent<PortalComponent, EndCollideEvent>(OnEndCollide); //stalker-en-changes
     }
 
     private void OnGetVerbs(Entity<PortalComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
@@ -115,6 +115,20 @@ public abstract class SharedPortalSystem : EntitySystem
             return;
         }
 
+        // stalker-en-changes
+        // If dragging isn't allowed then don't let em through
+        if (!ent.Comp.AllowDragged &&
+            (_pulling.IsPulling(subject) || _pulling.IsPulled(subject)))
+            return;
+
+        if (ent.Comp.AccessLocked)
+        {
+            if (!_access.IsAllowed(subject, ent.Owner))
+                return;
+        }
+
+        // stalker-en-changes-end
+
         if (TryComp<LinkedEntityComponent>(ent, out var link))
         {
             if (link.LinkedEntities.Count == 0)
@@ -143,19 +157,12 @@ public abstract class SharedPortalSystem : EntitySystem
         if (_netMan.IsClient)
             return;
 
-        // stalker-en-changes
-        if (!ent.Comp.AccessLocked)
-        {
-            if (!_access.IsAllowed(subject, args.OurEntity))
-                return;
-        }
-        // stalker-en-changes-end
-
         // no linked entity--teleport randomly
         if (ent.Comp.RandomTeleport)
             TeleportRandomly(ent, subject);
     }
 
+    /* stalker-en-changes - Portal timeout is self-managed
     private void OnEndCollide(Entity<PortalComponent> ent, ref EndCollideEvent args)
     {
         if (!ShouldCollide(args.OurFixtureId, args.OtherFixtureId, args.OurFixture, args.OtherFixture))
@@ -169,6 +176,7 @@ public abstract class SharedPortalSystem : EntitySystem
             RemCompDeferred<PortalTimeoutComponent>(subject);
         }
     }
+    stalker-en-changes-end */
 
     /// <summary>
     /// Checks if the colliding fixtures are the ones we want.

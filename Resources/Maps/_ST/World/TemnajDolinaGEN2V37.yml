@@ -68451,16 +68451,16 @@ entities:
     - type: Transform
       pos: 151.5,3.5
       parent: 1
-    - type: LocalTeleport
-      portalName: Наймы и Заря
+    - type: LinkByString
+      linkString: Наймы и Заря
   - uid: 18738
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 90.5,43.5
       parent: 1
-    - type: LocalTeleport
-      portalName: Наймы и Заря
+    - type: LinkByString
+      linkString: Наймы и Заря
 - proto: LockerBig
   entities:
   - uid: 16778

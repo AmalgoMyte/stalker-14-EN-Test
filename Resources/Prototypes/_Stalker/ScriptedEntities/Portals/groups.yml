@@ -9,6 +9,9 @@
   parent: MapTeleportBaseUncollide
   id: Cordon-DerebasStalkerUncollide
   name: Cordon-DerebasStalkerUncollide
+  components:
+  - type: LinkByString
+    linkString: Cordon-DerebasStalker
 
 ####################################Общий
 
@@ -25,6 +28,9 @@
   parent: MapTeleportBaseUncollide
   id: Bar-BarStalkerUncollide
   name: Bar-BarStalkerUncollide
+  components:
+  - type: LinkByString
+    linkString: Bar-BarStalker
 
 ####################################Монолит
 
@@ -41,6 +47,8 @@
   id: Cordon-LesBaseUncollide
   name: Cordon-LesBaseUncollide
   components:
+  - type: LinkByString
+    linkString: Cordon-LesBase
   - type: AccessReader
     access: [["Monolith"]]
 
@@ -75,6 +83,8 @@
   id: Cordon-SvalkaBandUncollide
   name: Cordon-SvalkaBandUncollide
   components:
+  - type: LinkByString
+    linkString: Cordon-SvalkaBand
   - type: AccessReader
     access: [["Bandit"]]
 
@@ -92,6 +102,9 @@
   parent: MapTeleportBaseUncollide
   id: Cordon-MilBaseUncollide
   name: Cordon-MilBaseUncollide (spawn)
+  components:
+  - type: LinkByString
+    linkString: Cordon-MilBase
 
 - type: entity
   parent: MapTeleportBase
@@ -108,6 +121,8 @@
   id: Purgatory-NIIUncolibe
   name: Purgatory-NIIUncolibe (spawn)
   components:
+  - type: LinkByString
+    linkString: Purgatory-NII
   - type: AccessReader
     access: [["SciBase"]]
 
@@ -126,6 +141,8 @@
   id: Purgatory-LesUncolibe
   name: Purgatory-LesUncolibe (spawn)
   components:
+  - type: LinkByString
+    linkString: Purgatory-Les
   - type: AccessReader
     access: [["SciBase"]]
 
@@ -143,6 +160,9 @@
   parent: MapTeleportBaseUncollide
   id: Base-SeraUncollide
   name: Base-SeraUncollide (spawn)
+  components:
+  - type: LinkByString
+    linkString: Base-Sera
 
 ####################################Ренегаты
 
@@ -159,8 +179,8 @@
   id: Cordon-ReneUncollide1
   name: Cordon-ReneUncollide1 (spawn)
   components:
-  - type: AccessReader
-    access: [["Renegat"]]
+  - type: LinkByString
+    linkString: Cordon-Rene1
 
 - type: entity
   parent: MapTeleportBase
@@ -175,8 +195,8 @@
   id: Cordon-ReneUncollide2
   name: Cordon-ReneUncollide2 (spawn)
   components:
-  - type: AccessReader
-    access: [["Renegat"]]
+  - type: LinkByString
+    linkString: Cordon-Rene2
 
 - type: entity
   parent: MapTeleportBase
@@ -191,8 +211,8 @@
   id: Cordon-ReneUncollide3
   name: Cordon-ReneUncollide3 (spawn)
   components:
-  - type: AccessReader
-    access: [["Renegat"]]
+  - type: LinkByString
+    linkString: Cordon-Rene3
 
 - type: entity
   parent: MapTeleportBase
@@ -207,8 +227,8 @@
   id: Rene-SvalkaUncollide
   name: Rene-SvalkaUncollide (spawn)
   components:
-  - type: AccessReader
-    access: [["Renegat"]]
+  - type: LinkByString
+    linkString: Rene-Svalka
 
 ########################################## Грех
 
@@ -225,6 +245,8 @@
   id: Cordon-OazisUncollide
   name: Cordon-OazisUncollide
   components:
+  - type: LinkByString
+    linkString: Cordon-Oazis
   - type: AccessReader
     access: [["Greh"]]
 
@@ -253,6 +275,8 @@
   id: Cordon-TopUncollide
   name: Cordon-TopUncollide
   components:
+  - type: LinkByString
+    linkString: Cordon-Top
   - type: AccessReader
     access: [["CN"]]
 
@@ -270,6 +294,9 @@
   parent: MapTeleportBaseUncollide
   id: Cordon-TemnajaLoshinaUncollide
   name: Cordon-TemnajaLoshinaUncollide
+  components:
+  - type: LinkByString
+    linkString: Cordon-TemnajaLoshina
 
 - type: entity
   parent: MapTeleportBase
@@ -283,6 +310,9 @@
   parent: MapTeleportBaseUncollide
   id: Cordon-ProjectUncollide
   name: Cordon-ProjectUncollide
+  components:
+  - type: LinkByString
+    linkString: Cordon-Project
 
 ####################################Отступники
 
@@ -299,6 +329,8 @@
   id: Cordon-OtstupnikiUncollide
   name: Cordon-OtstupnikiUncollide
   components:
+  - type: LinkByString
+    linkString: Cordon-Otstupniki
   - type: AccessReader
     access: [["Deserter"]]
 
@@ -317,6 +349,8 @@
   id: Cordon-MercBandUncollide
   name: Cordon-MercBandUncollide
   components:
+  - type: LinkByString
+    linkString: Cordon-Merc
   - type: AccessReader
     access: [["Merc"]]
 
@@ -335,6 +369,8 @@
   id: Cordon-PoiskUncollide
   name: Cordon-PoiskUncollide
   components:
+  - type: LinkByString
+    linkString: Cordon-Poisk
   - type: AccessReader
     access: [["Poisk"]]
 
@@ -353,6 +389,8 @@
   id: Cordon-NeutralUncollide
   name: Cordon-NeutralUncollide
   components:
+  - type: LinkByString
+    linkString: Cordon-Neutral
   - type: AccessReader
     access: [["Neutral"]]
 
@@ -371,6 +409,8 @@
   id: Lobby-JabaUncollide
   name: Lobby-JabaUncollide
   components:
+  - type: LinkByString
+    linkString: Lobby-Jaba
   - type: AccessReader
     access: [["Jaba"]]
 
@@ -389,6 +429,8 @@
   id: Lobby-Clear-SkyUncollide
   name: Lobby-Clear-SkyUncollide
   components:
+  - type: LinkByString
+    linkString: Lobby-Clear-Sky
   - type: AccessReader
     access: [["CN"]]
 
@@ -407,6 +449,8 @@
   id: Lobby-Agro-MilBase-SciBase-Uncollide
   name: Lobby-Agro-MilBase-SciBase-Uncollide (spawn)
   components:
+  - type: LinkByString
+    linkString: Lobby-Agro-MilBase-SciBase
   - type: AccessReader
     access: [["Military"], ["SciBase"]]
 
@@ -423,6 +467,8 @@
   id: Lobby-RedForest-VoenBase-Uncollide
   name: Lobby-RedForest-VoenBase-Uncollide (spawn)
   components:
+  - type: LinkByString
+    linkString: Lobby-RedForest-VoenBase
   - type: AccessReader
     access: [["MilitaryStalker"]]
 
@@ -439,5 +485,7 @@
   id: Lobby-Kordon-SciBase-Uncollide
   name: Lobby-Kordon-SciBase-Uncollide (spawn)
   components:
+  - type: LinkByString
+    linkString: Lobby-Kordon-SciBase
   - type: AccessReader
     access: [["SciBase"]]

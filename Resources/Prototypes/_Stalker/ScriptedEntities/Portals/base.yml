@@ -56,6 +56,8 @@
   # stalker-en-changes
   - type: Portal
   - type: LinkByString
+  - type: Physics
+    canCollide: False
   # stalker-en-changes-end
   - type: PointLight
     color: OrangeRed
@@ -89,6 +91,8 @@
   # stalker-en-changes
   - type: Portal
   - type: LinkByString
+  - type: Physics
+    canCollide: False
   # stalker-en-changes-end
 
 # Portal system template

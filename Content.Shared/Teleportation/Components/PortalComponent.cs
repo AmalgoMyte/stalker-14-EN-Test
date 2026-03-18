@@ -60,5 +60,8 @@ public sealed partial class PortalComponent : Component
 
     [DataField]
     public TimeSpan Cooldown = TimeSpan.FromSeconds(0.5);
+
+    [DataField]
+    public bool AllowDragged = false;
     // stalker-en-changes-end
 }
