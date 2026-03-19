@@ -162,7 +162,7 @@
   categories:
     - name: Персональная категория
       items:
-        STWeaponRifleAUG: 4000
+        STWeaponRifleAUG: 7000
 
 - type: personalShop
   id: PersonalLeopard2a7Shop
