@@ -252,7 +252,7 @@
       FoodTinMRE: 120
       DrinkLemonadehBottleFull: 50
       STFoodMeatSalami: 350
-      CigPackBub: 400
+      CigPackBub: 400 # 200% price cause fuck mili
 
   - name: shop-category-medicine
     priority: 10
