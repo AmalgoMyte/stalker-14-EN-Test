@@ -346,6 +346,7 @@
         # Instruments
         CardBin: 100
         PokerCardBin: 150
+
     - name: Gardening
       priority: 14
       items:
@@ -356,3 +357,10 @@
         HydroponicsToolMiniHoe: 70
         Bucket: 60
         STGoldShovel: 100
+        TomatoSeeds: 70
+        PotatoSeeds: 70
+        CabbageSeeds: 70
+        OnionSeeds: 70
+        RiceSeeds: 70
+        CornSeeds: 70
+        
