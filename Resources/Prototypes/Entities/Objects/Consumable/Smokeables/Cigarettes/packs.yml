@@ -182,9 +182,9 @@
 
 - type: entity
   id: CigPackSyndicate
-  parent: [CigPackBase, BaseSyndicateContraband]
+  parent: CigPackBase # STEN change
   name: Interdyne herbals packet
-  description: Elite cigarettes for elite syndicate agents. Infused with medicine for when you need to do more than calm your nerves.
+  description: Elite cigarettes for elite smokers. Infused with medicine for when you need to do more than calm your nerves. #STEN change
   components:
   - type: Sprite
     sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/syndicate.rsi
@@ -211,7 +211,7 @@
     containers:
       storagebase: !type:NestedSelector
         rolls: !type:RangeNumberSelector
-          range: 2, 9
+          range: 3, 10 #STEN change
         tableId: RandomSoakedSmokeTable
 
 # Entity tables
@@ -224,6 +224,8 @@
       weight: 1
     - id: CigaretteFrezon
       weight: 1
+    - id: CigaretteLead #STEN change
+      weight: 1 #STEN change
     - id: CigarettePhlogiston
       weight: 1
     - id: CigaretteWeldingFuel
