@@ -1815,5 +1815,12 @@
   id: 190
   time: '2026-03-24T00:13:19.483671+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/704
+- author: RebelledCombine
+  changes:
+  - message: Reduced the damage falloff on rifle rounds.
+    type: Tweak
+  id: 191
+  time: '2026-03-24T21:37:16.189990+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/706
 Name: Stalker
 Order: -1
