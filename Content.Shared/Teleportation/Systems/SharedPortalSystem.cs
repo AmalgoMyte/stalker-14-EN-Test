@@ -94,6 +94,9 @@ public abstract class SharedPortalSystem : EntitySystem
 
         var subject = args.OtherEntity;
 
+        if (subject == EntityUid.Invalid || !EntityManager.EntityExists(subject))
+            return;
+
         // best not.
         if (Transform(subject).Anchored)
             return;
