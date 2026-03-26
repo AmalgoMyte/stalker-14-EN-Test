@@ -6,6 +6,13 @@
   suffix: Stalker, Miracle Machine
   components:
     - type: MiracleMachineBattery
+    - type: Sprite # TODO: add sprite for maintenance panel open
+      sprite: _Stalker_EN/Structures/Machines/psybattery.rsi
+      layers:
+      - state: icon
+      - state: overlay-unshaded
+        shader: unshaded
+        visible: true
     - type: Explosive
       explosionType: Default
       maxIntensity: 100
