@@ -123,7 +123,7 @@
       #STWeaponRifleAK103: 16 # Give them an RPK later instead
       STWeaponRifleStalkerAbakan: 14
       STWeaponShotgunProtecta: 8
-      STSeraKnife: 3
+      #STSeraKnife: 3 # removed until oilman lets me add it
       STWeaponPistolUSP: 2
 
   - name: shop-category-armor
