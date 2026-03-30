@@ -1941,5 +1941,73 @@
   id: 205
   time: '2026-03-29T08:54:01.415282+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/726
+- author: Roland410 && @DuckManZach
+  changes:
+  - message: Fixes portals not linking up properly and them not being mapped properly
+      either.
+    type: Fix
+  - message: Opens up some places, that were locked to unused factions, such as Project,
+      Seraphim, etc.
+    type: Tweak
+  - message: Changes the Illegal Bar floor to be less ugly.
+    type: Tweak
+  - message: Translates the spawn NPC.
+    type: Tweak
+  - message: Warp point added for the Illegal Bar for staff/developers.
+    type: Add
+  - message: Changes Bolota to planet type, for easier mapping.
+    type: Tweak
+  id: 206
+  time: '2026-03-30T19:41:27.079536+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/735
+- author: dallaszzz & @CVSthePharmacy
+  changes:
+  - message: PP2000 and OTS
+    type: Add
+  - message: Currently non functional grenade launcher variant of the M16
+    type: Add
+  - message: New sprites for the M4 and M16
+    type: Tweak
+  - message: Fixes an issue with 1911 and USP mags
+    type: Fix
+  id: 207
+  time: '2026-03-30T19:47:36.464778+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/719
+- author: Noguchi47
+  changes:
+  - message: Update the Midi soundfont (GeneralUser GS) to the newest version.
+    type: Add
+  id: 208
+  time: '2026-03-30T19:49:43.855542+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/736
+- author: BELNAKBU
+  changes:
+  - message: 16 new variants of zombies with guns, 12 variants new melee zombies,
+      spawntriggers for new melee zombies
+    type: Add
+  id: 209
+  time: '2026-03-30T19:56:50.923944+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/713
+- author: BELNAKBU
+  changes:
+  - message: Hercules, status effect and whole new system for weight reduction/adduction
+    type: Add
+  id: 210
+  time: '2026-03-30T19:57:48.317412+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/731
+- author: BELNAKBU
+  changes:
+  - message: fixed this build and debug test
+    type: Fix
+  id: 211
+  time: '2026-03-30T20:17:24.455493+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/737
+- author: BELNAKBU
+  changes:
+  - message: Map renderer fix
+    type: Fix
+  id: 212
+  time: '2026-03-30T21:46:00.044155+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/738
 Name: Stalker
 Order: -1
