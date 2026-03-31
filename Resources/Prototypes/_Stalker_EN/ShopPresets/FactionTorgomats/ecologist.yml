@@ -130,6 +130,7 @@
         # Rifles
         STWeaponRifleAKS74U: 2050
         STWeaponRifleM16: 3200
+        STWeaponRifleM16M203: 4000 # T2
         STWeaponRifleAKS74: 3800
 
     - name: shop-category-magazines
@@ -335,6 +336,7 @@
         STCameraVintage: 1200
         STCameraDamaged: 400
         STCameraFilm: 150
+        STLoggingChainsaw: 1000
 
     - name: shop-category-customization
       priority: 11
