@@ -1,6 +1,6 @@
 - type: job
   id: StalkerRene
-  name: job-renegade
+  name: ISG Operative
   icon: rene
   description: job-renegade-desc
   playTimeTracker: JobRenegat
@@ -31,6 +31,7 @@
         - type: NpcFactionMember
           factions:
           - Bandit
+        - type: STAnomalyTipsViewing
         - type: Vocal # stalker EN change start
           sounds:
             Male: MaleHumanBandit
@@ -39,7 +40,7 @@
 
 - type: job
   id: StalkerHeadRene
-  name: job-head-renegade
+  name: ISG Commander
   icon: rene
   description: job-head-renegade-desc
   playTimeTracker: JobHeadRenegat
@@ -67,6 +68,7 @@
       bandProto: STRenegatsBand
       bandRankId: 2
     - type: BlockTackingHolyItems
+    - type: STAnomalyTipsViewing
     - type: NpcFactionMember
       factions:
       - Bandit
