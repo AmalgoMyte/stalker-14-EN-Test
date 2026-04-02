@@ -37,7 +37,7 @@ public sealed class PdaNotificationUIController : UIController
 
     // Limit constants
     private const int MaxNotifications = 5;
-    private const float MaxTotalHeight = 500f;
+    private const float MaxTotalHeight = 650f;
     private const int MaxContentLength = 300;
     private const float NotificationPanelHeight = 120f;
     private const float NotificationPanelWidth = 650f;
