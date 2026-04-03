@@ -31,9 +31,22 @@ public sealed partial class NcContractSystem : EntitySystem
         if (!TrySpawnGhostRoleSpawner(contractId, spawnCoords, out var spawner))
             return false;
 
-        ConfigureGhostRoleSpawner(spawner, contract, ghostRoleProtoId);
-        RegisterGhostRoleObjectiveState((store, contractId), spawner, contract);
-        return true;
+        try
+        {
+            ConfigureGhostRoleSpawner(spawner, contract, ghostRoleProtoId);
+            RegisterGhostRoleObjectiveState((store, contractId), spawner, contract);
+            return true;
+        }
+        catch (Exception e)
+        {
+            CleanupObjectiveRuntime(store, contractId, deleteTrackedEntities: true);
+            if (!TerminatingOrDeleted(spawner))
+                Del(spawner);
+
+            Sawmill.Error(
+                $"[Contracts] Ghost role init failed for '{contractId}': runtime spawner configuration threw: {e}");
+            return false;
+        }
     }
 
     private bool TryResolveGhostRolePrototype(
@@ -73,9 +86,17 @@ public sealed partial class NcContractSystem : EntitySystem
         out EntityUid spawner
     )
     {
+        if (!_prototypes.HasIndex<EntityPrototype>(NcContractTuning.DefaultGhostRoleRuntimeSpawnerPrototypeId))
+        {
+            Sawmill.Warning(
+                $"[Contracts] Ghost role init failed for '{contractId}': runtime spawner prototype '{NcContractTuning.DefaultGhostRoleRuntimeSpawnerPrototypeId}' is missing.");
+            spawner = EntityUid.Invalid;
+            return false;
+        }
+
         try
         {
-            spawner = Spawn(null, spawnCoords);
+            spawner = Spawn(NcContractTuning.DefaultGhostRoleRuntimeSpawnerPrototypeId, spawnCoords);
             return true;
         }
         catch (Exception e)

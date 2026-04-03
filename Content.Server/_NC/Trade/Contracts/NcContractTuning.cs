@@ -10,6 +10,7 @@ internal static class NcContractTuning
     public const float MinRepairDoAfterSeconds = 0.1f;
     public const string DefaultContractPinpointerPrototypeId = "PinpointerUniversal";
     public const string DefaultTrackedDeliveryDropoffBeaconPrototypeId = "TradeContractDropoffBeacon";
+    public const string DefaultGhostRoleRuntimeSpawnerPrototypeId = "TradeContractGhostRoleRuntimeSpawner";
     public const string DefaultRepairToolQuality = "Welding";
     public const float DefaultRepairDoAfterSeconds = 2f;
     public const string DefaultRepairStageSoundPath = "/Audio/Effects/sparks4.ogg";

@@ -20,6 +20,12 @@
     color: "#4FA9FF"
 
 - type: entity
+  id: TradeContractGhostRoleRuntimeSpawner
+  name: contract ghost role runtime spawner
+  categories: [ HideSpawnMenu ]
+  save: false
+
+- type: entity
   id: BoxCrateQests
   name: box-crate
   description: box-crate
