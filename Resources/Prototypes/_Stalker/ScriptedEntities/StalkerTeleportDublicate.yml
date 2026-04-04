@@ -355,6 +355,7 @@
   - type: DuplicateTeleport
     prefix: Bar
     maxWeight: 500 # stalker-en change
+  - type: NoobDenyer
 
 - type: entity
   id: StalkerDublicateBoloto

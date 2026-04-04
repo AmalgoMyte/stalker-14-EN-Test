@@ -5,7 +5,8 @@ using Content.Server._Stalker.StalkerDB;
 using Content.Server._Stalker.StalkerRepository;
 using Content.Server._Stalker.Storage;
 using Content.Server._Stalker.Teleports.StalkerBandPortal;
-using Content.Server.Players.PlayTimeTracking; // stalker-changes
+using Content.Server.Players.PlayTimeTracking;
+using Content.Shared._Stalker_EN.NoobDenyer; // stalker-changes
 using Content.Shared._Stalker.StalkerRepository;
 using Content.Shared._Stalker.Teleport;
 using Content.Shared.Access.Systems;
@@ -66,6 +67,19 @@ public sealed class DuplicateTeleportSystem : SharedTeleportSystem
 
         if (!TryComp<ActorComponent>(subject, out var actor))
             return;
+
+        // stalker-changes: Block Rookies (<10h playtime) from using non-Cordon stash portals
+        if (HasComp<NoobDenyerComponent>(entity))
+        {
+            var session = actor.PlayerSession;
+            var playtime = _playTimeTrackingManager.GetOverallPlaytime(session).TotalHours;
+
+            if (playtime < 10)
+            {
+                _popup.PopupEntity(Loc.GetString("rookie-stash-denied"), subject);
+                return;
+            }
+        }
 
         if (!_accessReaderSystem.IsAllowed(subject, portalEnt))
             return;
