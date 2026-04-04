@@ -309,7 +309,6 @@
         STCameraVintage: 1200
         STCameraDamaged: 400
         STCameraFilm: 150
-        STLoggingChainsaw: 1000
 
     - name: shop-category-modules
       priority: 11
@@ -357,9 +356,6 @@
         ClothingMaskNeckBalaklava3: 10
         # NECK
         ClothingNeckScarfGray: 100
-        ClothingBandageStalkerUk: 10
-        ClothingBandageStalkerRus: 10
-        ClothingBandageStalkerArgentina: 10
         # faction
         ClothingBandageStalkerMerc: 10
         ClothingNeckMantleMerc: 100

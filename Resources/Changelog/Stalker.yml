@@ -2030,5 +2030,63 @@
   id: 213
   time: '2026-03-31T02:01:45.048411+00:00'
   url: https://github.com/coolmankid12345/stalker-14-EN/pull/671
+- author: dallaszzz
+  changes:
+  - message: Fools
+    type: Add
+  id: 214
+  time: '2026-03-31T20:08:23.359162+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/730
+- author: dallaszzz
+  changes:
+  - message: races requirements so now you can play any species
+    type: Fix
+  id: 215
+  time: '2026-03-31T20:56:50.327166+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/741
+- author: crocodilecarousel
+  changes:
+  - message: Mutant behavior has been updated to include crit targets
+    type: Tweak
+  id: 216
+  time: '2026-04-01T21:44:39.888662+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/745
+- author: Nox38
+  changes:
+  - message: Belts now render on top of armor.
+    type: Tweak
+  id: 217
+  time: '2026-04-01T21:47:26.800969+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/744
+- author: dallaszzz
+  changes:
+  - message: Faction armbands were made consistant and have explicit names
+    type: Tweak
+  - message: Took out all the flag armbands from all venders
+    type: Remove
+  id: 218
+  time: '2026-04-01T21:52:16.595317+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/739
+- author: CattyLucky
+  changes:
+  - message: New CraftSystems with metaprogresion
+    type: Add
+  id: 219
+  time: '2026-04-02T21:12:12.369584+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/748
+- author: CattyLucky
+  changes:
+  - message: Added new quests.
+    type: Add
+  id: 220
+  time: '2026-04-03T12:25:38.197112+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/749
+- author: stickycheZ101
+  changes:
+  - message: fixed bonfires being uncraftable
+    type: Fix
+  id: 221
+  time: '2026-04-03T16:26:44.153218+00:00'
+  url: https://github.com/coolmankid12345/stalker-14-EN/pull/752
 Name: Stalker
 Order: -1
