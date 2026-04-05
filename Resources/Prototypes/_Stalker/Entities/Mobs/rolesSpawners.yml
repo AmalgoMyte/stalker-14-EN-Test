@@ -504,6 +504,52 @@
     - type: Loadout
       prototypes: [ SBUGear ]
 
+- type: entity
+  name: кукла зомбированного (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobStalkerZombieMeleeBase
+  id: MobStalkerZombified
+  components:
+  - type: Sprite
+    layers:
+    - map:
+      - enum.DamageStateVisualLayers.Base
+      state: zombie
+      sprite: /Textures/_Stalker_EN/Mobs/Mutants/Zombified/Melee/Zombiecivillian1.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: zombie
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: HTN
+    enabled: false
+  - type: Vocal
+    sounds:
+      Male: Zombie
+      Female: Zombie
+      Unsexed: Zombie
+  - type: Access
+    tags:
+      - Stalker
+  - type: NpcFactionMember
+    factions:
+      - Mutated
+  - type: Hunger
+    baseDecayRate: 0
+  - type: Thirst
+    baseDecayRate: 0
+  - type: PersonalDamageBlock
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Monolith
+  - type: PsyEffectImmune
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4.0
+
 - type: startingGear
   id: StalkerGearT4
   equipment:

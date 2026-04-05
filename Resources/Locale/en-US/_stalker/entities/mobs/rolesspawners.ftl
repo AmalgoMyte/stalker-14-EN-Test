@@ -68,3 +68,6 @@ ent-MobStalkerMonolith = Monolith doll (rename me)
 ent-MobStalkerProject = Project doll (rename me)
     .desc = NPC spawner
     .suffix = Stalker, patch pawn
+ent-MobStalkerZombified = Zombified doll (rename me)
+    .desc = NPC spawner
+    .suffix = Stalker, patch pawn
