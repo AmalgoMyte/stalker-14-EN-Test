@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/06/2026 19:09:26
+  time: 04/06/2026 19:27:27
   entityCount: 7892
 maps:
 - 1
@@ -22798,42 +22798,6 @@ entities:
             id: tire5
           decals:
             17467: 16.228786,30.693747
-    - type: Biome
-      forcedMarkerLayers: []
-      markerLayers: []
-      loadedMarkers: {}
-      pendingMarkers: {}
-    - type: MapLight
-      ambientLightColor: '#D8B059FF'
-    - type: MapAtmosphere
-      space: False
-      mixture:
-        volume: 2500
-        immutable: True
-        temperature: 293.15
-        moles:
-          Oxygen: 21.82478
-          Nitrogen: 82.10312
-    - type: RadiationGridResistance
-    - type: LightCycle
-      minLightLevel: 0.35
-      initialOffset: False
-      offset: 1200
-      duration: 5400
-    - type: SunShadow
-    - type: SunShadowCycle
-      directions:
-      - direction: 0,3
-      - alpha: 0.5
-        direction: -3,-0.1
-        ratio: 0.25
-      - alpha: 0.8
-        direction: 0,-3
-        ratio: 0.5
-      - alpha: 0.5
-        direction: 3,-0.1
-        ratio: 0.75
-    - type: STPlayerZone
 - proto: AlwaysPoweredWallLight
   entities:
   - uid: 7362
@@ -42554,13 +42518,6 @@ entities:
     - type: Transform
       pos: -36.5,-104.5
       parent: 1
-- proto: StalkerDublicateSci
-  entities:
-  - uid: 7265
-    components:
-    - type: Transform
-      pos: -43.5,-100.5
-      parent: 1
 - proto: StalkerExplSafezoneTriggerIn
   entities:
   - uid: 5800
@@ -47157,6 +47114,16 @@ entities:
     - type: Transform
       pos: -52.5,-126.5
       parent: 1
+- proto: StalkerTeleportSci
+  entities:
+  - uid: 3700
+    components:
+    - type: Transform
+      pos: -43.5,-100.5
+      parent: 1
+    - type: AccessReader
+      accessListsOriginal:
+      - - SciBase
 - proto: StalkerTimedSpawner30
   entities:
   - uid: 6124
