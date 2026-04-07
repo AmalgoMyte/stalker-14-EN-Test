@@ -1,5 +1,6 @@
 using Content.Shared.Chat;
 using Content.Shared.CombatMode.Pacification;
+using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
 using Robust.Shared.Timing;
 
@@ -37,8 +38,7 @@ public sealed class SharedSurrenderSystem : EntitySystem
         _surrenderRemovals[ent.Owner] = (_timing.CurTime + SurrenderDuration, wasPacified);
 
         // Show floating text above entity with name
-        var name = ent.Comp.EntityName;
-        var message = $"{name} {Loc.GetString("surrender-chat-message")}";
+        var message = Loc.GetString("surrender-chat-message", ("entity", Identity.Entity(ent.Owner, EntityManager)));
         _popup.PopupEntity(message, ent, ent);
     }
 
