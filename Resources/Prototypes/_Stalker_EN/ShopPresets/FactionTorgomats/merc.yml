@@ -94,6 +94,7 @@
     MutantPartBurerBrain: 1000
     MutantPartControllerBrain: 2000
 
+
   categories:
     - name: shop-category-weapons
       priority: 1
@@ -104,6 +105,9 @@
         STWeaponShotgunBenelliM4Super90: 1200 # T3
         STWeaponShotgunSPAS: 2200 # T3
         # Pistols
+        STWeaponPistolP99: 400
+        STWeaponPistolUSP: 1500
+        STWeaponPistolM1911: 800
         WeaponPistolStalkerGlock: 200
         STWeaponRevolverSWPC325TR: 350
         STWeaponRevolverRugerRedhawk: 650
@@ -125,6 +129,7 @@
         556Mag45: 400
         556Mag30: 330
         # 9.19
+        P99Mag15: 120
         BaseMP5Mag: 260
         BaseTEC9Mag: 120
         BaseGlockMag10: 100
@@ -135,6 +140,8 @@
         751Mag20: 400
         751Mag30: 500
         # .45
+        USPMag12: 170
+        M1911Mag7: 100
         STSpeedLoader45ACPEmpty: 90
         STSpeedLoader357MagnumEmpty: 120
 
@@ -197,6 +204,7 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
+        HerculesBottleFull: 200
 
     - name: shop-category-armor
       priority: 6
@@ -248,10 +256,11 @@
         ClothingOuterCoatLoyalist: 3000
         ClothingOuterCoatKevlarMercenaries: 2750
         # Gas Masks
-        ClothingMaskGasZarya: 100
-        ClothingMaskGasMercStalker: 150
-        ClothingMaskGasM40: 250
-        ClothingMaskGP7: 900
+        ClothingMaskGasZarya: 500 # T1
+        ClothingMaskGasMercStalker: 500 # T1
+        ClothingMaskGasM40: 1500 # T2
+        ClothingMaskM50: 3800 # T3
+        ClothingMaskM51: 7500 # T4
 
     - name: shop-category-research-equipment
       priority: 9
@@ -299,6 +308,7 @@
       items:
         STModuleScopeRiflesT1Nato: 600
         STModuleSilencerRiflesT1Nato: 400
+        STModuleSilencerPistolT1: 400
         STModuleSMGGripT1: 600
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
@@ -340,9 +350,6 @@
         ClothingMaskNeckBalaklava3: 10
         # NECK
         ClothingNeckScarfGray: 100
-        ClothingBandageStalkerUk: 10
-        ClothingBandageStalkerRus: 10
-        ClothingBandageStalkerArgentina: 10
         # faction
         ClothingBandageStalkerMerc: 10
         ClothingNeckMantleMerc: 100
@@ -395,3 +402,15 @@
         ClothingShoesBootsMerc: 30
         ClothingShoesSwat: 35
         ClothingShoesBootsCombat: 30
+
+    - name: Smokables #explained using D&D lifestyle expenses
+      priority: 15
+      items:
+        CigPackBub: 250 #comfortable
+        CigPackGreen: 150 #poor
+        CigPackRed: 200 #modest
+        CigPackBlue: 150 #poor
+        CigPackBlack: 200 #modest
+        CigPackMixed: 250 #comfortable
+        CigPackMarlboro: 200 #modest
+        CigPackKosmos: 100 #squalid

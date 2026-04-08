@@ -61,6 +61,7 @@ namespace Content.Server.Database
         public DbSet<StalkerNewsComment> StalkerNewsComments { get; set; } = null!; // stalker-en-changes
         public DbSet<StalkerNewsReaction> StalkerNewsReactions { get; set; } = null!; // stalker-en-changes
         public DbSet<StalkerCharacterRank> StalkerCharacterRanks { get; set; } = null!; // stalker-en-changes
+        public DbSet<StalkerPersistentCraftProfile> StalkerPersistentCraftProfiles { get; set; } = null!; // stalker-en-changes
         public DbSet<StalkerNewsArticlePhoto> StalkerNewsArticlePhotos { get; set; } = null!; // stalker-en-changes
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -418,6 +419,9 @@ namespace Content.Server.Database
 
             modelBuilder.Entity<StalkerCharacterRank>()
                 .HasKey(r => new { r.UserId, r.CharacterName });
+
+            modelBuilder.Entity<StalkerPersistentCraftProfile>()
+                .HasKey(p => new { p.UserId, p.CharacterName });
             // stalker-en-changes-end
 
             // Changes for modern HWID integration
@@ -514,6 +518,15 @@ namespace Content.Server.Database
         public int PreferenceId { get; set; }
         public Preference Preference { get; set; } = null!;
         public bool Changeable { get; set; } = true; // stalker-changes
+
+        // stalker-en-changes-start: anonymous alias
+        [MaxLength(64)]
+        public string STAliasAdjective { get; set; } = string.Empty;
+        [MaxLength(64)]
+        public string STAliasNoun { get; set; } = string.Empty;
+        [MaxLength(16)]
+        public string STAliasColor { get; set; } = string.Empty;
+        // stalker-en-changes-end
     }
 
     public class Job
@@ -1772,6 +1785,22 @@ namespace Content.Server.Database
 
         [Required]
         public TimeSpan TimeSpent { get; set; }
+    }
+
+    /// <summary>
+    /// Stores a persistent, character-bound progression profile for the separate crafting system.
+    /// Composite key: (UserId, CharacterName).
+    /// </summary>
+    public sealed class StalkerPersistentCraftProfile
+    {
+        [Required]
+        public Guid UserId { get; set; }
+
+        [Required]
+        public string CharacterName { get; set; } = default!;
+
+        [Required]
+        public string ProfileJson { get; set; } = "{}";
     }
     // stalker-en-changes-end
 

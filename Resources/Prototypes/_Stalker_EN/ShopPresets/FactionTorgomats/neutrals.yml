@@ -112,6 +112,7 @@
     priority: 1
     items:
       # Pistols
+      STWeaponPistolM1911: 1200
       WeaponPistolStalkerTT: 75 # T1
       WeaponPistolStalkerPM: 75 # T1
       STWeaponRevolverSWModel325: 500
@@ -141,6 +142,7 @@
       Base545Mag10: 80 #T1
       545Mag20: 260 #T2
       # Other
+      M1911Mag7: 150
       BasePMMag: 12
       BasePPSHMag: 300
       TTMag: 15
@@ -216,6 +218,7 @@
       FoodTinMRE: 120
       DrinkLemonadehBottleFull: 50
       STFoodMeatSalami: 350
+      HerculesBottleFull: 200
 
   - name: shop-category-armor
     priority: 6
@@ -275,9 +278,9 @@
       ClothingOuterCoatLoyalist: 3000
       ClothingOuterCoatPoisk: 500 # t0
       # Gasmasks
-      ClothingMaskGasZarya: 90 # T1
-      ClothingMaskGP5: 350 # T2
-      STClothingMaskGP7Neutral: 900  # T3
+      ClothingMaskGasZarya: 600 # T1
+      ClothingMaskGP5: 500 # T1
+      STClothingMaskGP7Neutral: 3800  # T3
 
   - name: shop-category-research-equipment
     priority: 9
@@ -326,6 +329,7 @@
       STCameraVintage: 1200
       STCameraDamaged: 400
       STCameraFilm: 150
+      STLoggingChainsaw: 1000
 
   - name: shop-category-paperwork
     priority: 11
@@ -428,3 +432,20 @@
       AcousticGuitarInstrument: 500
       AccordionInstrument: 500
       HarmonicaInstrument: 500
+
+  - name: shop-category-blueprints
+    priority: 14
+    items:
+      STCookingBerryJam: 2000
+
+  - name: Smokables #explained using D&D lifestyle expenses
+    priority: 15
+    items:
+      CigPackBub: 250 #comfortable
+      CigPackGreen: 150 #poor
+      CigPackRed: 200 #modest
+      CigPackBlue: 150 #poor
+      CigPackBlack: 200 #modest
+      CigPackMixed: 250 #comfortable
+      CigPackMarlboro: 200 #modest
+      CigPackKosmos: 100 #squalid

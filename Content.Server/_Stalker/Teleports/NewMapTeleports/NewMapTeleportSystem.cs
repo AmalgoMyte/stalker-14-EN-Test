@@ -1,6 +1,5 @@
 using System.Linq;
 using System.Threading.Tasks;
-using Content.Server._Stalker_EN.NoobDenyer;
 using Content.Server._Stalker.IncomingDamage;
 using Content.Server.Administration.Commands;
 using Content.Server.GameTicking;
@@ -30,6 +29,7 @@ using Content.Shared.Players.PlayTimeTracking;
 
 namespace Content.Server._Stalker.Teleports.NewMapTeleports;
 // TODO: Rename this system
+[Obsolete("[Stalker] NewMapTeleport has been replaced by PortalComponent")]
 public sealed class NewMapTeleportSystem : SharedTeleportSystem
 {
     [Dependency] private readonly IMapManager _mapManager = default!;
@@ -61,6 +61,7 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
     }
     private void OnPostGameMapLoad(PostGameMapLoad args)
     {
+        /*
 #if !DEBUG
         var prototypes = _protoMan.EnumeratePrototypes<MapLoaderPrototype>();
         foreach (var prototype in prototypes)
@@ -71,6 +72,7 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
             }
         }
 #endif
+*/
 
         UpdateLinks();
         var ev = new MapsLoadedEvent();
@@ -128,19 +130,6 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
         if (component.IsCollisionDisabled)
             return;
         var subject = args.OtherEntity;
-
-        // stalker-changes: Check NoobDenyer before access so Rookies get a helpful message instead of silent denial
-        if (HasComp<NoobDenyerComponent>(uid) && TryComp<ActorComponent>(subject, out var actorComponent))
-        {
-            var session = actorComponent.PlayerSession;
-            var playtime = _playTimeTrackingManager.GetOverallPlaytime(session).TotalHours;
-
-            if (playtime < 10)
-            {
-                _popup.PopupEntity("As a Rookie, you cannot teleport to Bar yet. Follow the arrows on the floor to Rookie Village.", subject);
-                return;
-            }
-        }
 
         if (!component.AllowAll)
         {

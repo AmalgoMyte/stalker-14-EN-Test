@@ -22,6 +22,7 @@
         Blunt: -0.5
         Slash: -0.5
     interval: 1
+    ignoreResistances: true # EN
   - type: Armor
     hiddenExamine: true
     armorClass: 2
@@ -32,8 +33,14 @@
         Heat: 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.80
+  - type: AlwaysHot # EN
 
 # its pretty good since it also broadcasts your location with its silly light
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier1
 - type: entity
   parent: BaseArtifact
   name: Гроздь
@@ -65,6 +72,7 @@
         Radiation: -0.5
         Heat: 0.3
     interval: 1
+    ignoreResistances: true # EN
   - type: Armor
     hiddenExamine: true
     armorClass: 2
@@ -76,6 +84,11 @@
         Compression: 1
   - type: ExplosionResistance
     damageCoefficient: 0.8
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier3
 
 - type: entity
   parent: BaseArtifact
@@ -101,6 +114,7 @@
         Blunt: -1
         Slash: -1
     interval: 1
+    ignoreResistances: true # EN
   - type: Armor
     hiddenExamine: true
     armorClass: 2
@@ -111,9 +125,15 @@
         Cold: 0.6
   - type: ExplosionResistance
     damageCoefficient: 0.70
+  - type: AlwaysHot # EN
 
 # its so nothing
 # ill probably change it again later when i think of something else it can do
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier2
 - type: entity
   parent: BaseArtifact
   name: Скала
@@ -144,6 +164,7 @@
         Slash: -1
         Heat: 0.8
     interval: 1
+    ignoreResistances: true # EN
   - type: Armor
     hiddenExamine: true
     armorClass: 2
@@ -153,6 +174,11 @@
         Blunt: 0.85
       flatReductions:
         Slash: 1
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier3
 
 - type: entity
   parent: BaseArtifact
@@ -183,6 +209,7 @@
         Blunt: -2
         Slash: -2
     interval: 1
+    ignoreResistances: true # EN
   - type: Armor
     hiddenExamine: true
     armorClass: 2
@@ -193,8 +220,14 @@
         Cold: 0.4
   - type: ExplosionResistance
     damageCoefficient: 0.60
+  - type: AlwaysHot # EN
 
 # i really dont know what to do with this one
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier3
 - type: entity
   parent: BaseArtifact
   name: Солнце
@@ -218,6 +251,7 @@
       types:
         Cold: -4
     interval: 1
+    ignoreResistances: true # EN
   - type: Armor
     hiddenExamine: true
     armorClass: 2
@@ -226,8 +260,14 @@
         Heat: 0.4
   - type: ExplosionResistance
     damageCoefficient: 0.5
+  - type: AlwaysHot # EN
 
 # bezoar type artifact
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier4
 - type: entity
   parent: BaseArtifact
   name: Корень
@@ -255,6 +295,7 @@
         Cellular: -3
         Heat: 0.1
     interval: 1
+    ignoreResistances: true # EN
   - type: Armor
     hiddenExamine: true
     armorClass: 2
@@ -263,6 +304,11 @@
         Poison: 0.75
         Caustic: 0.75
         Cellular: 0.1 # this is really funny. to me.
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier4
 
 - type: entity
   parent: BaseArtifact
@@ -299,6 +345,11 @@
     - type: ExplodeOnTrigger
       keysIn:
       - stageTwo
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier2
 
 - type: entity
   parent: BaseArtifact
@@ -328,6 +379,7 @@
       types:
         Compression: -2
         Piercing: 0.08 # we're so back
+    ignoreResistances: true # EN
   - type: Armor
     hiddenExamine: true
     armorClass: 2
@@ -337,6 +389,11 @@
         Heat: 0.3
         Psy: 0.5
         Shock: 1.2
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier4
 
 - type: entity
   parent: BaseArtifact
@@ -361,9 +418,15 @@
       types:
         Bloodloss: -6
     interval: 1
+    ignoreResistances: true # EN
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
        Bloodloss: 0.5
+  - type: Tag
+    tags:
+    - Khabar
+    - STArtifact
+    - STArtifactTier5

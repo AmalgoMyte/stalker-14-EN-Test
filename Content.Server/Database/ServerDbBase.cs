@@ -285,7 +285,10 @@ namespace Content.Server.Database
                 antags.ToHashSet(),
                 traits.ToHashSet(),
                 loadouts,
-                profile.Changeable
+                profile.Changeable,
+                profile.STAliasAdjective, // stalker-en-changes
+                profile.STAliasNoun, // stalker-en-changes
+                profile.STAliasColor // stalker-en-changes
             );
         }
 
@@ -317,6 +320,11 @@ namespace Content.Server.Database
             profile.Slot = slot;
             profile.PreferenceUnavailable = (DbPreferenceUnavailableMode) humanoid.PreferenceUnavailable;
             profile.Changeable = humanoid.Changeable; // stalker-changes
+            // stalker-en-changes-start
+            profile.STAliasAdjective = humanoid.STAliasAdjective;
+            profile.STAliasNoun = humanoid.STAliasNoun;
+            profile.STAliasColor = humanoid.STAliasColor;
+            // stalker-en-changes-end
 
             profile.Jobs.Clear();
             profile.Jobs.AddRange(
@@ -2520,6 +2528,45 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             }
 
             await db.DbContext.SaveChangesAsync();
+        }
+        // stalker-en-changes-end
+
+        // stalker-en-changes-start: Persistent craft profile persistence
+        public async Task<StalkerPersistentCraftProfile?> GetStalkerPersistentCraftProfileAsync(Guid userId, string characterName)
+        {
+            await using var db = await GetDb();
+            return await db.DbContext.StalkerPersistentCraftProfiles
+                .FirstOrDefaultAsync(p => p.UserId == userId && p.CharacterName == characterName);
+        }
+
+        public async Task SetStalkerPersistentCraftProfileAsync(Guid userId, string characterName, string profileJson)
+        {
+            await using var db = await GetDb();
+
+            var existing = await db.DbContext.StalkerPersistentCraftProfiles
+                .FirstOrDefaultAsync(p => p.UserId == userId && p.CharacterName == characterName);
+
+            if (existing is null)
+            {
+                db.DbContext.StalkerPersistentCraftProfiles.Add(new StalkerPersistentCraftProfile
+                {
+                    UserId = userId,
+                    CharacterName = characterName,
+                    ProfileJson = profileJson,
+                });
+            }
+            else
+            {
+                existing.ProfileJson = profileJson;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task DeleteAllStalkerPersistentCraftProfilesAsync()
+        {
+            await using var db = await GetDb();
+            await db.DbContext.StalkerPersistentCraftProfiles.ExecuteDeleteAsync();
         }
         // stalker-en-changes-end
 

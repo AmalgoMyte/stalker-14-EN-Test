@@ -7,6 +7,8 @@
     - type: Bands
       band: Stalker
       bandIcon: un
+      bandProto: STUNBand
+      bandRankId: 1
     - type: Access
       groups:
         - Military
@@ -97,6 +99,8 @@
     - type: Bands
       band: Stalker
       bandIcon: rene
+      bandProto: STRenegatsBand
+      bandRankId: 1
     - type: Loadout
       prototypes: [ ReneGear ]
     - type: NpcFactionMember
@@ -115,6 +119,8 @@
     - type: Bands
       band: Stalker
       bandIcon: freedom
+      bandProto: STFreedomBand
+      bandRankId: 1
     - type: Loadout
       prototypes: [ FreedomGear ]
 
@@ -130,6 +136,8 @@
     - type: Bands
       band: Stalker
       bandIcon: Dolg
+      bandProto: STDolgBand
+      bandRankId: 1
     - type: Loadout
       prototypes: [ DolgGear ]
 
@@ -145,6 +153,8 @@
     - type: Bands
       band: Stalker
       bandIcon: sci
+      bandProto: STSciBand
+      bandRankId: 1
     - type: Loadout
       prototypes: [ SciGear ]
     - type: NpcFactionMember
@@ -163,6 +173,8 @@
     - type: Bands
       band: Stalker
       bandIcon: sci_decan
+      bandProto: STSciBand
+      bandRankId: 2
     - type: Loadout
       prototypes: [ SciGear2 ]
     - type: NpcFactionMember
@@ -181,6 +193,8 @@
     - type: Bands
       band: Stalker
       bandIcon: sci_rector
+      bandProto: STSciBand
+      bandRankId: 3
     - type: Loadout
       prototypes: [ SciGear3 ]
     - type: NpcFactionMember
@@ -239,6 +253,8 @@
     - type: Bands
       band: Stalker
       bandIcon: zavet
+      bandProto: STCovenantBand
+      bandRankId: 1
     - type: Loadout
       prototypes: [ StalkerZavetGear ]
 
@@ -254,8 +270,11 @@
     - type: Bands
       band: Stalker
       bandIcon: greh
+      bandProto: STGrehBand
+      bandRankId: 1
     - type: Loadout
       prototypes: [ StalkerGrehGear ]
+    - type: PsyEffectImmune
 
 - type: entity
   name: кукла член Чистого Неба (переименуй меня)
@@ -269,6 +288,8 @@
     - type: Bands
       band: Stalker
       bandIcon: cn
+      bandProto: STClearSkyBand
+      bandRankId: 1
       altBand: stalker
     - type: Loadout
       prototypes: [ StalkerClearSkyGear ]
@@ -287,6 +308,8 @@
   - type: Bands
     band: Stalker
     bandIcon: project-1
+    bandProto: STProjectBand
+    bandRankId: 1
     altBand: stalker
     canChange: true
   - type: Loadout
@@ -304,6 +327,8 @@
     - type: Bands
       band: Stalker
       bandIcon: clowns
+      bandProto: STStalkerBand
+      bandRankId: 1
 
 - type: entity
   name: кукла наёмник (переименуй меня)
@@ -317,6 +342,8 @@
     - type: Bands
       band: Stalker
       bandIcon: merc
+      bandProto: STMercenariesBand
+      bandRankId: 1
       altBand: stalker
     - type: Loadout
       prototypes: [ StalkerMercenaryGear ]
@@ -333,6 +360,8 @@
     - type: Bands
       band: Stalker
       bandIcon: ecologists
+      bandProto: STAnomalistsBand
+      bandRankId: 1
     - type: Loadout
       prototypes: [ AnomalistGear ]
 
@@ -348,6 +377,8 @@
     - type: Bands
       band: Stalker
       bandIcon: seraphim
+      bandProto: STSeraphimsBand
+      bandRankId: 1
     - type: Loadout
       prototypes: [ StalkerGear ]
 
@@ -405,11 +436,30 @@
     - type: Bands
       band: Stalker
       bandIcon: stalker
+      bandProto: STStalkerBand
+      bandRankId: 1
     - type: Access
       tags:
         - Stalker
     - type: Loadout
       prototypes: [ StalkerGear ]
+
+- type: entity
+  name: кукла Новичка (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerRookie
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: rookie
+      bandProto: STStalkerBand
+      bandRankId: 1
+    - type: Access
+      tags:
+        - Rookie
+    - type: Loadout
+      prototypes: [ RookieGear ]
 
 - type: entity
   name: кукла Монолита (переименуй меня)
@@ -420,6 +470,8 @@
     - type: Bands
       band: Stalker
       bandIcon: monolith
+      bandProto: STMonolithBand
+      bandRankId: 1
     - type: Access
       tags:
         - Monolith
@@ -435,10 +487,20 @@
     - type: PersonalDamageBlock
     - type: Damageable
       damageContainer: Biological
+      damageModifierSet: Monolith # Stalker EN change
     - type: STAnomalyTipsViewing
     - type: AutoImplant
       implants:
       - STSeraBombImplant
+    - type: IntrinsicRadioReceiver # Stalker EN change start
+    - type: IntrinsicRadioTransmitter
+      channels:
+      - Monolith
+    - type: ActiveRadio
+      channels:
+      - Monolith
+      # Stalker EN change end
+    - type: PsyEffectImmune
 
 - type: entity
   name: кукла СБУ (переименуй меня)
@@ -449,6 +511,8 @@
     - type: Bands
       band: Stalker
       bandIcon: sbu
+      bandProto: STSsuBand
+      bandRankId: 1
     - type: Access
       groups:
         - Military
@@ -456,6 +520,37 @@
         - MilitaryOfficer
     - type: Loadout
       prototypes: [ SBUGear ]
+
+- type: entity
+  name: кукла зомбированного (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerZombified
+  components:
+  - type: HumanoidAppearance
+    species: Human
+    eyeColor: "#EBEBEB"
+    hasCustomEyeColor: true # Stalker-EN-Change: preserve custom eye color from YAML
+    skinColor: "#9C9794FF"
+    hasCustomSkinColor: true # Stalker-EN-Change: preserve custom skin color from YAML
+  - type: Bands
+    band: Zombie
+    bandIcon: zombieEN
+  - type: Access
+    tags:
+      - Stalker
+  - type: NpcFactionMember
+    factions:
+      - Mutated
+  - type: Hunger
+    baseDecayRate: 0
+  - type: Thirst
+    baseDecayRate: 0
+  - type: PersonalDamageBlock
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Monolith
+  - type: PsyEffectImmune
 
 - type: startingGear
   id: StalkerGearT4
@@ -481,3 +576,9 @@
     torso: ClothingTorsoTurtlenecksMilitary
     shoes: STClothingShoesBootsCombatFilled
     pocket1: PassportSBU
+
+- type: startingGear
+  id: RookieGear
+  equipment:
+    id: StalkerPDA
+    dogtag: ClothingNeckDogtagRookie # EN

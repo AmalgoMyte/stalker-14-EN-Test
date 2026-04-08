@@ -27,6 +27,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+      #- type: PersistentCraftAccess
       - type: NpcFactionMember
         factions:
         - Stalker
@@ -44,3 +45,8 @@
         pullingItemTag: PliersStalker
         teethCount: 3
         initialTeeth: 3
+      - type: Vocal
+        sounds:
+          Male: MaleHumanLoner
+          Female: FemaleHumanLoner
+          Unsexed: MaleHumanLoner

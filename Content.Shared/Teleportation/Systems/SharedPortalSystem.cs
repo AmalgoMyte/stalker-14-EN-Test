@@ -1,7 +1,11 @@
 ﻿using System.Linq;
+using Content.Shared._Stalker_EN.NoobDenyer;
+using Content.Shared.Access.Systems;
+using Content.Shared.Chat;
 using Content.Shared.Ghost;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
+using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Teleportation.Components;
@@ -13,6 +17,7 @@ using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Teleportation.Systems;
@@ -31,6 +36,9 @@ public abstract class SharedPortalSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly PullingSystem _pulling = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly AccessReaderSystem _access = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly ISharedPlaytimeManager _playTimeTrackingShared = default!;
 
     private const string PortalFixture = "portalFixture";
     private const string ProjectileFixture = "projectile";
@@ -43,7 +51,7 @@ public abstract class SharedPortalSystem : EntitySystem
         SubscribeLocalEvent<PortalComponent, GetVerbsEvent<AlternativeVerb>>(OnGetVerbs);
 
         SubscribeLocalEvent<PortalComponent, StartCollideEvent>(OnCollide);
-        SubscribeLocalEvent<PortalComponent, EndCollideEvent>(OnEndCollide);
+        // SubscribeLocalEvent<PortalComponent, EndCollideEvent>(OnEndCollide); //stalker-en-changes
     }
 
     private void OnGetVerbs(Entity<PortalComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
@@ -89,6 +97,9 @@ public abstract class SharedPortalSystem : EntitySystem
 
         var subject = args.OtherEntity;
 
+        if (subject == EntityUid.Invalid || !EntityManager.EntityExists(subject))
+            return;
+
         // best not.
         if (Transform(subject).Anchored)
             return;
@@ -105,11 +116,58 @@ public abstract class SharedPortalSystem : EntitySystem
             _pulling.TryStopPull(pullerComp.Pulling.Value, subjectPulling);
         }
 
-        // if they came from another portal, just return and wait for them to exit the portal
-        if (HasComp<PortalTimeoutComponent>(subject))
+        // stalker-en-changes
+        // if they have a timeout, check their cooldown
+        if (TryComp<PortalTimeoutComponent>(subject, out var timeout))
         {
-            return;
+            if (timeout.Cooldown <= _timing.CurTime)
+            {
+                RemComp<PortalTimeoutComponent>(subject);
+            }
+            else
+            {
+                _popup.PopupClient(Loc.GetString("teleport-cooldown-denied", ("time", (timeout.Cooldown - _timing.CurTime).Seconds)),
+                    Transform(subject).Coordinates,
+                    subject,
+                    PopupType.Medium);
+                return;
+            }
         }
+
+        // If dragging isn't allowed then don't let em through
+        if (!ent.Comp.AllowDragged &&
+            (_pulling.IsPulling(subject) || _pulling.IsPulled(subject)))
+            return;
+
+        if (ent.Comp.AccessLocked)
+        {
+            if (!_access.IsAllowed(subject, ent.Owner))
+            {
+                _popup.PopupClient(Loc.GetString("teleport-access-denied"),
+                    Transform(subject).Coordinates,
+                    subject,
+                    PopupType.Medium);
+                return;
+            }
+        }
+
+        if (HasComp<NoobDenyerComponent>(ent) && TryComp<ActorComponent>(subject, out var actorComponent))
+        {
+            if (_netMan.IsServer)
+            {
+                var session = actorComponent.PlayerSession;
+                var playtimes = _playTimeTrackingShared.GetPlayTimes(session);
+                var playtime = playtimes.GetValueOrDefault(PlayTimeTrackingShared.TrackerOverall).TotalHours;
+
+                if (playtime < 10)
+                {
+                    _popup.PopupEntity("As a Rookie, you cannot teleport to Bar yet. Follow the arrows on the floor to Rookie Village.", subject);
+                    return;
+                }
+            }
+        }
+
+        // stalker-en-changes-end
 
         if (TryComp<LinkedEntityComponent>(ent, out var link))
         {
@@ -121,13 +179,19 @@ public abstract class SharedPortalSystem : EntitySystem
                 return;
 
             // pick a target and teleport there
-            var target = _random.Pick(link.LinkedEntities);
+            var target = _random.Pick(link.LinkedEntities
+                .Where(x => x != EntityUid.Invalid && EntityManager.EntityExists(x))
+                .ToHashSet());
+
+            if (!HasComp<TransformComponent>(target))
+                return;
 
             if (HasComp<PortalComponent>(target))
             {
                 // if target is a portal, signal that they shouldn't be immediately teleported back
-                var timeout = EnsureComp<PortalTimeoutComponent>(subject);
+                timeout = EnsureComp<PortalTimeoutComponent>(subject); // stalker-en-changes
                 timeout.EnteredPortal = ent;
+                timeout.Cooldown = ent.Comp.Cooldown + _timing.CurTime; // stalker-en-changes
                 Dirty(subject, timeout);
             }
 
@@ -143,6 +207,7 @@ public abstract class SharedPortalSystem : EntitySystem
             TeleportRandomly(ent, subject);
     }
 
+    /* stalker-en-changes - Portal timeout is self-managed
     private void OnEndCollide(Entity<PortalComponent> ent, ref EndCollideEvent args)
     {
         if (!ShouldCollide(args.OurFixtureId, args.OtherFixtureId, args.OurFixture, args.OtherFixture))
@@ -156,6 +221,7 @@ public abstract class SharedPortalSystem : EntitySystem
             RemCompDeferred<PortalTimeoutComponent>(subject);
         }
     }
+    stalker-en-changes-end */
 
     /// <summary>
     /// Checks if the colliding fixtures are the ones we want.

@@ -1,6 +1,9 @@
 # alphabetical please
 
 - type: Tag
+  id: ArtifactShards
+
+- type: Tag
   id: FoldedFlagBand
 
 - type: Tag
@@ -34,13 +37,28 @@
   id: Lighter
 
 - type: Tag
+  id: Lumber
+
+- type: Tag
   id: MagazineDesertEagle
 
 - type: Tag
   id: MagazineDesertEagleMagnum
 
+#- type: Tag
+#  id: MagazineM1911
+
+- type: Tag
+  id: MagazineP99
+
 - type: Tag
   id: Plate
+
+- type: Tag
+  id: STCookingRecipe
+
+- type: Tag
+  id: STCorn
 
 - type: Tag
   id: STCameraFilm
@@ -55,7 +73,19 @@
   id: STElasticRubberBlue
 
 - type: Tag
-  id: Cartridge357Magnum
+  id: LightSource
+
+- type: Tag
+  id: MagazineM1911
+
+- type: Tag
+  id: MagazineUSP
+
+- type: Tag
+  id: MagazineHipower
+
+- type: Tag
+  id: C96Clip
 
 - type: Tag
   id: SpeedLoader357Magnum
@@ -63,3 +93,12 @@
 # For ritual chasm, this is stuff related to the flesh mutant
 - type: Tag
   id: STFleshRelated
+
+- type: Tag
+  id: STSugar
+
+- type: Tag
+  id: STWeaponModulePistolSilencer  
+
+- type: Tag
+  id: STYeast

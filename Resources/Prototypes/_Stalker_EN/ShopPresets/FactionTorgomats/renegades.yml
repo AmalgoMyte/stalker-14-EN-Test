@@ -213,6 +213,7 @@
       FoodTinMRE: 120
       DrinkLemonadehBottleFull: 50
       STFoodMeatSalami: 350
+      HerculesBottleFull: 200
 
   - name: shop-category-armor
     priority: 6
@@ -266,8 +267,8 @@
       ClothingOuterCoatLoyalist: 3000
       ClothingOuterCoatRenegat: 2000 # T3 Cheaper cause let a renegade be drippy
       # Gasmasks
-      ClothingMaskGasRenegats: 100 # T1
-      ClothingMaskGP5: 200 # T2
+      ClothingMaskGasRenegats: 400 # T1
+      STClothingMaskGasPPM88: 1500 # T2
 
   - name: shop-category-research-equipment
     priority: 9
@@ -314,17 +315,20 @@
       STElasticRubberGreen: 50
       STElasticRubberBlue: 50
       FoldedFlagRene: 250
+      STRag: 10
       # Cameras
       STCamera: 750
       STCameraVintage: 1200
       STCameraDamaged: 400
       STCameraFilm: 150
+      STLoggingChainsaw: 1000
 
   - name: shop-category-modules
     priority: 11
     items:
       STModuleScopeRiflesT1Ru: 600
       STModuleSilencerRiflesT1Ru: 400
+      STModuleSilencerPistolT1: 400
       STModuleShotgunChokeT1: 200
       STModuleSMGGripT1: 600
       STModuleSniperSightT1: 600
@@ -359,9 +363,6 @@
       # NECK
       ClothingNeckScarfBrown: 100
       ClothingNeckScarfGray: 100
-      ClothingBandageStalkerUk: 10
-      ClothingBandageStalkerRus: 10
-      ClothingBandageStalkerArgentina: 10
       # faction
       ClothingCapeRenegat: 100
       ClothingBandageStalkerYellow: 10
@@ -416,10 +417,28 @@
       ClothingShoesSwat: 35
       ClothingShoesBootsCombat: 30
 
+  - name: shop-category-blueprints
+    priority: 13
+    items:
+      STCookingLiverTartare: 2000
+
+  - name: Smokables #explained using D&D lifestyle expenses
+    priority: 14
+    items:
+      CigPackBub: 250 #comfortable
+      CigPackGreen: 150 #poor
+      CigPackRed: 200 #modest
+      CigPackBlue: 150 #poor
+      CigPackBlack: 200 #modest
+      CigPackMixed: 250 #comfortable
+      CigPackMarlboro: 200 #modest
+      CigPackKosmos: 100 #squalid
+
 - type: shopPreset
   id: ZealotTrader
-  # minSellPrice: 0
-  # itemsForSale:
+  minSellPrice: 0
+  itemsForSale:
+    STFoodJarMeatLiver: 3
   categories:
   - name: shop-category-weapons
     priority: 1
@@ -463,6 +482,7 @@
     items:
       # ARMOR
       STClothingOuterArmorLightPlateVestBasePSZ7rene: 22
+      ClothingNeckToothNecklace: 1
   # - name: shop-category-storage-and-containers
   #   priority: 7
   #   items:

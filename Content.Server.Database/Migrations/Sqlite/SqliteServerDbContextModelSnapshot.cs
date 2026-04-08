@@ -838,6 +838,24 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("pref_unavailable");
 
+                    b.Property<string>("STAliasAdjective")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("stalias_adjective");
+
+                    b.Property<string>("STAliasColor")
+                        .IsRequired()
+                        .HasMaxLength(16)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("stalias_color");
+
+                    b.Property<string>("STAliasNoun")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("stalias_noun");
+
                     b.Property<string>("Sex")
                         .IsRequired()
                         .HasColumnType("TEXT")
@@ -1634,6 +1652,27 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsUnique();
 
                     b.ToTable("stalker_news_reactions", (string)null);
+                });
+
+            modelBuilder.Entity("Content.Server.Database.StalkerPersistentCraftProfile", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("user_id");
+
+                    b.Property<string>("CharacterName")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("character_name");
+
+                    b.Property<string>("ProfileJson")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("profile_json");
+
+                    b.HasKey("UserId", "CharacterName")
+                        .HasName("PK_stalker_persistent_craft_profiles");
+
+                    b.ToTable("stalker_persistent_craft_profiles", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.StalkerPdaPassword", b =>

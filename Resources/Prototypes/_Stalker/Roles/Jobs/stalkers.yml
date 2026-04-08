@@ -43,6 +43,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+      #- type: PersistentCraftAccess
       - type: NpcFactionMember
         factions:
         - Stalker
@@ -60,6 +61,11 @@
         pullingItemTag: PliersStalker
         teethCount: 3
         initialTeeth: 3
+      - type: Vocal # stalker EN change start
+        sounds:
+          Male: MaleHumanLoner
+          Female: FemaleHumanLoner
+          Unsexed: MaleHumanLoner # stalker EN change end
 
 - type: chameleonOutfit
   id: StalkerChameleonOutfit
@@ -109,6 +115,7 @@
   special:
     - !type:AddComponentSpecial
       components:
+      #- type: PersistentCraftAccess
       - type: NpcFactionMember
         factions:
         - Stalker
@@ -127,6 +134,11 @@
         pullingItemTag: PliersStalker
         teethCount: 3
         initialTeeth: 3
+      - type: Vocal # stalker EN change start
+        sounds:
+          Male: MaleHumanLoner
+          Female: FemaleHumanLoner
+          Unsexed: MaleHumanLoner # stalker EN change end
 
 - type: startingGear
   id: StalkerGear
